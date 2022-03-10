@@ -9,7 +9,7 @@ export default function Card() {
         true: 'Loading funny suggestion...',
         false: `...${idea.activity}`
     }
-    const getIdea = useCallback(() => {
+    const getIdea = () => {
         setLoadingState(true)
         setTimeout(() => {
             axios.get("https://www.boredapi.com/api/activity").then(response => {
@@ -18,9 +18,11 @@ export default function Card() {
                 setLoadingState(false)
             })
         }, 1000)
-    }, [randomNumber])
+    }
+
     useEffect(() => {
         getIdea()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []
     )
     return (
@@ -32,7 +34,7 @@ export default function Card() {
                     {loadingStateText[loadingState]}
                 </p>
                 <div className="card-actions justify-end">
-                    <button disabled={loadingState} onClick={() => { getIdea() }} className={loadingState ? `btn btn-primary mt-3 loading` : `btn btn-primary mt-3`}>Bring a new idea</button>
+                    <button disabled={loadingState} onClick={getIdea} className={loadingState ? `btn btn-primary mt-3 loading` : `btn btn-primary mt-3`}>Bring a new idea</button>
                 </div>
             </div >
         </div >
