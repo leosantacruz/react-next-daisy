@@ -20,7 +20,7 @@ export default function Card() {
         }, 1000)
     }, [randomNumber])
     useEffect(() => {
-        getIdea
+        getIdea()
     }, []
     )
     return (

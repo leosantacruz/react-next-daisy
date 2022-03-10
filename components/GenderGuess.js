@@ -13,6 +13,7 @@ export default function GenderGuess() {
     }, [nameEntered.name])
     return (
         <div className="mt-5">
+            <h2>Gender</h2>
             <div>The name {nameEntered.name} is a {gender} name</div>
             <small>99% probability</small>
         </div>

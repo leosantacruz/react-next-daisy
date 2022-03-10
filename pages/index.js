@@ -15,7 +15,7 @@ export default function Getdata() {
       <Head>
         <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.3/dist/full.css" rel="stylesheet" type="text/css" />
       </Head>
-      <div className="container mx-auto mt-4 px-4">
+      <div className="container mx-auto mt-10 px-4">
         <div className="flex flex-row">
           <div className="basis-1/4 px-4"> <Idea /></div>
           <div className="basis-3/4 px-4">
