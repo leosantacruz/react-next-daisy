@@ -24,7 +24,7 @@ export default function Currencies() {
     return (
         <div>
             <h1 className="text-5xl mb-45 text-amber-300">Write your name</h1>
-            <p className="my-4">We`&apos;`ll guess which country your name is from</p>
+            <p className="my-4">We will guess what country your name is from</p>
             <input type="text" onBlur={(e) => { guessCountry(e.target.value) }} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
             <div>
                 {probability.length > 0 &&
