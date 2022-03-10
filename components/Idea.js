@@ -1,5 +1,5 @@
 import axios from "axios"
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 
 export default function Card() {
     const [idea, setIdea] = useState({})
@@ -9,7 +9,7 @@ export default function Card() {
         true: 'Loading funny suggestion...',
         false: `...${idea.activity}`
     }
-    const getIdea = () => {
+    const getIdea = useCallback(() => {
         setLoadingState(true)
         setTimeout(() => {
             axios.get("https://www.boredapi.com/api/activity").then(response => {
@@ -18,10 +18,10 @@ export default function Card() {
                 setLoadingState(false)
             })
         }, 1000)
-    }
+    }, [randomNumber])
     useEffect(() => {
-        getIdea()
-    }, []
+        getIdea
+    }, [getIdea]
     )
     return (
         <div className="card w-96 bg-base-100 shadow-xl">

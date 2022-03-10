@@ -7,8 +7,8 @@ import GenderGuess from "../components/GenderGuess"
 import Script from "next/script"
 
 export const NameContext = React.createContext()
-export default function getdata() {
-  const [name, setName] = useState("Super nombre")
+export default function Getdata() {
+  const [name, setName] = useState()
   return (
     <div>
       <Script src="https://cdn.tailwindcss.com"></Script>
