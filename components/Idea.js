@@ -21,7 +21,7 @@ export default function Card() {
     }, [randomNumber])
     useEffect(() => {
         getIdea
-    }, [getIdea]
+    }, []
     )
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -32,7 +32,7 @@ export default function Card() {
                     {loadingStateText[loadingState]}
                 </p>
                 <div className="card-actions justify-end">
-                    <button disabled={loadingState} onClick={getIdea} className={loadingState ? `btn btn-primary mt-3 loading` : `btn btn-primary mt-3`}>Bring a new idea</button>
+                    <button disabled={loadingState} onClick={() => { getIdea() }} className={loadingState ? `btn btn-primary mt-3 loading` : `btn btn-primary mt-3`}>Bring a new idea</button>
                 </div>
             </div >
         </div >
